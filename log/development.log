@@ -40,3 +40,70 @@ Processing by PostsController#show as HTML
   [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
   Rendered posts/show.html.erb within layouts/application (0.4ms)
 Completed 200 OK in 27ms (Views: 10.4ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Title Goes Here"], ["description", "Desc goes here..."], ["created_at", "2018-05-17 14:56:22.840752"], ["updated_at", "2018-05-17 14:56:22.840752"]]
+  [1m[36m (3.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mPost Load (0.3ms)[0m  SELECT  "posts".* FROM "posts"  ORDER BY "posts"."id" DESC LIMIT 1
+
+
+Started GET "/" for 68.40.63.148 at 2018-05-17 16:00:22 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/railties-4.2.10/lib/rails/templates/rails/welcome/index.html.erb (3.0ms)
+Completed 200 OK in 28ms (Views: 16.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 68.40.63.148 at 2018-05-17 16:00:27 +0000
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 458ms (Views: 455.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 68.40.63.148 at 2018-05-17 16:00:28 +0000
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 68.40.63.148 at 2018-05-17 16:00:28 +0000
+
+
+Started GET "/assets/turbolinks.self-2db6ec539b9190f75e1d477b305df53d12904d5cafdd47c7ffd91ba25cbec128.js?body=1" for 68.40.63.148 at 2018-05-17 16:00:28 +0000
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 68.40.63.148 at 2018-05-17 16:00:28 +0000
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 68.40.63.148 at 2018-05-17 16:00:28 +0000
+
+
+Started GET "/posts/new" for 68.40.63.148 at 2018-05-17 16:00:32 +0000
+Processing by PostsController#new as HTML
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "posts" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2018-05-17 16:00:32.926229"], ["updated_at", "2018-05-17 16:00:32.926229"]]
+  [1m[36m (39.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://67.205.188.72:36217/posts/3
+Completed 302 Found in 49ms (ActiveRecord: 39.7ms)
+
+
+Started GET "/posts/3" for 68.40.63.148 at 2018-05-17 16:00:33 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered posts/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 52ms (Views: 26.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/new" for 68.40.63.148 at 2018-05-17 16:00:51 +0000
+Processing by PostsController#new as HTML
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posts" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2018-05-17 16:00:51.938354"], ["updated_at", "2018-05-17 16:00:51.938354"]]
+  [1m[36m (2.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://67.205.188.72:36217/posts/4
+Completed 302 Found in 7ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/posts/4" for 68.40.63.148 at 2018-05-17 16:00:51 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered posts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 30ms (Views: 28.5ms | ActiveRecord: 0.2ms)

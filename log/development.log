@@ -151,3 +151,88 @@ AbstractController::ActionNotFound (The action 'create' could not be found for P
 
 
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.5ms)
+
+
+Started POST "/posts" for 97.120.201.67 at 2018-09-10 23:26:58 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FwpCWxahjJkWRvIcjjWOodgTM+GyQWKIEGvU5SVCiNpu4lEPGqoii3LHYOuXeFW2z4tS2Zo8FJGn6R+wbeVbEQ==", "title"=>"Something Great", "description"=>"So many people wanna run with the money hams.", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.7ms)[0m  [1mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Something Great"], ["description", "So many people wanna run with the money hams."], ["created_at", "2018-09-10 23:26:59.488022"], ["updated_at", "2018-09-10 23:26:59.488022"]]
+  [1m[35m (4.3ms)[0m  commit transaction
+Redirected to http://165.227.16.205:59166/posts/2
+Completed 302 Found in 50ms (ActiveRecord: 6.7ms)
+
+
+Started GET "/posts/2" for 97.120.201.67 at 2018-09-10 23:26:59 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered posts/show.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 409ms (Views: 387.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/1" for 97.120.201.67 at 2018-09-10 23:27:04 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered posts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 19ms (Views: 16.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/3" for 97.120.201.67 at 2018-09-10 23:27:08 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 3]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=3):
+  app/controllers/posts_controller.rb:7:in `show'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (39.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (109.4ms)
+
+
+Started POST "/posts" for 97.120.201.67 at 2018-09-10 23:27:21 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FwpCWxahjJkWRvIcjjWOodgTM+GyQWKIEGvU5SVCiNpu4lEPGqoii3LHYOuXeFW2z4tS2Zo8FJGn6R+wbeVbEQ==", "title"=>"Stupid Shit", "description"=>"None of this is dumb brah.", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.6ms)[0m  [1mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Stupid Shit"], ["description", "None of this is dumb brah."], ["created_at", "2018-09-10 23:27:21.958461"], ["updated_at", "2018-09-10 23:27:21.958461"]]
+  [1m[35m (39.3ms)[0m  commit transaction
+Redirected to http://165.227.16.205:59166/posts/3
+Completed 302 Found in 46ms (ActiveRecord: 41.0ms)
+
+
+Started GET "/posts/3" for 97.120.201.67 at 2018-09-10 23:27:22 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered posts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 20ms (Views: 19.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/2" for 97.120.201.67 at 2018-09-10 23:27:25 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered posts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 32ms (Views: 28.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/2" for 97.120.201.67 at 2018-09-10 23:27:56 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered posts/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 16ms (Views: 14.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/2" for 97.120.201.67 at 2018-09-10 23:28:04 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered posts/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 22ms (Views: 20.4ms | ActiveRecord: 0.2ms)

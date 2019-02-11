@@ -1,3 +1,7 @@
 <% @posts.each do |post| %>
-  <div><%= post.title %></div>
+  <h2><%= link_to(post.title, post_path(post)) %></h2>
+<% end %>
+
+<%= form_tag new_post_path, :method => :get do %>
+  <%= submit_tag "Create Post" %>
 <% end %>
